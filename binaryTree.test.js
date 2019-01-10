@@ -14,6 +14,17 @@ describe('add a new child', () => {
 
         console.log(tree.allNodes);
     })
+    it('should do a thing', ()=> {
+        let tree = new Tree ()
+
+        tree.addChild(46)
+        expect(tree.root.value).toEqual(46);
+
+        tree.addChild(86);
+
+        tree.addChild(43);
+        expect(tree.root.right.value).toEqual(43);
+    })
 })
 
 describe('remove child', () => {
@@ -33,62 +44,68 @@ describe('remove child', () => {
     })
 })
 
-// describe('find value by DFS', () => {
-//     it('should find the node with the given value by DFS', () => {
-//         let tree = new Tree(0);
-//         tree.addChild(1);
-//         tree.addChild(2);
-//         tree.addChild(3);
-//         tree.addChild(4);
-//         tree.addChild(5);
-//         tree.addChild(6);
-//         tree.addChild(7);
-//         tree.addChild(8);
-//         tree.addChild(9);
-//         tree.addChild(10);
+describe('find value by DFS', () => {
+    it('should find the node with the given value by DFS', () => {
+        let tree = new Tree(0);
+        tree.addChild(1);
+        tree.addChild(2);
+        tree.addChild(3);
+        tree.addChild(4);
+        tree.addChild(5);
+        tree.addChild(6);
+        tree.addChild(7);
+        tree.addChild(8);
+        tree.addChild(9);
+        tree.addChild(10);
+        tree.addChild(11)
 
-//         expect(tree.findByDFS(8).value).toEqual(8);
+        expect(tree.findByDFS(8).value).toEqual(8);
 
-//         expect(tree.findByDFS(6).value).toEqual(6);
+        expect(tree.findByDFS(6).value).toEqual(6);
 
-//     })
-// })
+        expect(tree.findByBFS(11).value).toEqual(11);
 
-// describe('find value by BFS', () => {
-//     it('should find the node with the given value by BFS', () => {
-//         let tree = new Tree(0);
-//         tree.addChild(1);
-//         tree.addChild(2);
-//         tree.addChild(3);
-//         tree.addChild(4);
-//         tree.addChild(5);
-//         tree.addChild(6);
-//         tree.addChild(7);
-//         tree.addChild(8);
-//         tree.addChild(9);
-//         tree.addChild(10);
+    })
+})
 
-//         expect(tree.findByBFS(8).value).toEqual(8);
+describe('find value by BFS', () => {
+    it('should find the node with the given value by BFS', () => {
+        let tree = new Tree(0);
+        tree.addChild(1);
+        tree.addChild(2);
+        tree.addChild(3);
+        tree.addChild(4);
+        tree.addChild(5);
+        tree.addChild(6);
+        tree.addChild(7);
+        tree.addChild(8);
+        tree.addChild(9);
+        tree.addChild(10);
+        tree.addChild(11)
 
-//         expect(tree.findByBFS(6).value).toEqual(6);
+        expect(tree.findByBFS(8).value).toEqual(8);
 
-//     })
-// })
+        expect(tree.findByBFS(6).value).toEqual(6);
 
-// describe('return max value', () => {
-//     it('should find the node with highest given value', () => {
-//         let tree = new Tree(0);
-//         tree.addChild(1);
-//         tree.addChild(2);
-//         tree.addChild(3);
-//         tree.addChild(4);
-//         tree.addChild(5);
-//         tree.addChild(6);
-//         tree.addChild(7);
-//         tree.addChild(8);
-//         tree.addChild(9);
-//         tree.addChild(10);
+        expect(tree.findByBFS(11).value).toEqual(11);
 
-//         expect(tree.maxValue()).toEqual(10);
-//     })
-// })
+    })
+})
+
+describe('return max value', () => {
+    it('should find the node with highest given value', () => {
+        let tree = new Tree(0);
+        tree.addChild(1);
+        tree.addChild(2);
+        tree.addChild(3);
+        tree.addChild(4);
+        tree.addChild(5);
+        tree.addChild(6);
+        tree.addChild(7);
+        tree.addChild(8);
+        tree.addChild(9);
+        tree.addChild(10);
+
+        expect(tree.maxValue()).toEqual(10);
+    })
+})
